@@ -4,6 +4,8 @@ import os
 from azure.core.credentials import AzureKeyCredential
 from azure.search.documents import SearchClient
 from dotenv import load_dotenv  
+from os import listdir
+from os.path import isfile, join
 
 load_dotenv(override=True)
 service_endpoint = os.getenv("AZURE_SEARCH_SERVICE_ENDPOINT") 
@@ -68,9 +70,7 @@ def transIPYNB(ipnybfile):
 
 
 #list files in notebook folder, and translate the first 3 files.
-import os
-from os import listdir
-from os.path import isfile, join
+
 notebookpath = './notebook'
 #keep the full path of the file
 onlyfiles = [f for f in listdir(notebookpath) if isfile(join(notebookpath, f))]
