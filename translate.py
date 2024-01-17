@@ -59,7 +59,8 @@ def transIPYNB(ipnybfile):
             cell['source'] = [new_source]
 
 
-        #save the translated content to a new ipnybfile
+        #save the translated content to a new ipnybfile, remove the .ipynb extension
+        ipnybfile = ipnybfile[:-6]
         with open(ipnybfile + '_cn.ipynb', 'w') as outfile:
             json.dump(data, outfile)
             print('done')
