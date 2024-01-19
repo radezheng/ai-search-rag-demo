@@ -72,10 +72,16 @@ def transIPYNB(ipnybfile):
 #list files in notebook folder, and translate the first 3 files.
 
 notebookpath = './notebook'
-#keep the full path of the file
-onlyfiles = [f for f in listdir(notebookpath) if isfile(join(notebookpath, f))]
+#list all files in the notebook folder
+
+# onlyfiles = [f for f in listdir(notebookpath) if isfile(join(notebookpath, f))]
+
+# or specify the files to translate
+onlyfiles = ['GPT4-Vision demo with Azure Open AI.ipynb']
+
 print(onlyfiles)
-for file in onlyfiles[:3]:
+# only translate the first [:x] files
+for file in onlyfiles[:1]:
     file = notebookpath + '/' + file
     print(file)
     transIPYNB(file)
